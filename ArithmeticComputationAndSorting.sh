@@ -31,7 +31,7 @@ for(( i=0; i<${#array[@]}; i++ ))
 do
 	for (( j=$i+1 ; j<${#array[@]}; j++ ))
 	do
-		if(( `echo "array[i] < arra[j] == 0" |bc -q` ==1 ))
+		if(( `echo "array[i] > arra[j] == 0" |bc -q` ==1 ))
 		then
 			temp="${array[$i]}"
 			array[$i]="${array[$j]}"
@@ -39,5 +39,5 @@ do
 		fi
 	done
 done
-echo "In decending order : ${array[@]}"
+echo "In Ascending order : ${array[@]}"
 
